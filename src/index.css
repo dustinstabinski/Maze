@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body > #root > div > #maze {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body > div > div {
+  height: 100vh;
+  background-color:#292b2c;
+}
+
+body > #root > div > #timer {
+  float: left;
+  width: 25%;
+  height: 13.5%;
+  margin-top: 1%;
+}

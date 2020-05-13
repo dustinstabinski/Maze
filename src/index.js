@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import "bootstrap/dist/css/bootstrap.css";
+//import Maze from "./components/maze"
+//import Square from './components/square';
+
 
 ReactDOM.render(
   <React.StrictMode>
