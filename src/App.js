@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import Maze from './components/maze';
-import Timer from './components/timer'
+import Game from "./components/game"
 
 function App() {
   return (
     <div className="App">
-      <Maze />
-      <Timer />
+      <Game />
     </div>
   );
 }

@@ -21,13 +21,22 @@ class Maze extends Component {
   /*Takes in an arrow key action and creates a path */
   followPath = (direction) => {
     const square_id = this.state.square_id_on;
+    if (this.props.gameComplete) {
+      return;
+    }
     if (direction === "ArrowRight") {
+      if (square_id % SIZE === SIZE - 1) {
+        return;
+      }
       if (this.state.lastkey === "ArrowLeft") {
         this.renderSquare(square_id);
       } else {
         this.renderSquare(square_id + 1);
       }
     } else if (direction === "ArrowLeft") {
+      if (square_id % SIZE === 0) {
+        return;
+      }
       if (this.state.lastkey === "ArrowRight") {
         this.renderSquare(square_id);
       } else {
@@ -93,6 +102,7 @@ class Maze extends Component {
     }
     this.setState(new_state);
     document.getElementById(s).focus();
+    this.props.isComplete(s);
     this.setState({ square_id_on: s });
   };
 
@@ -143,12 +153,12 @@ class Maze extends Component {
   ResetMaze = () => {
     this.setState(() => {
       return {
-      squares: this.fillMaze(SIZE),
-      starting_id: -1,
-      square_id_on: -1,
-      lastkey: "",
+        squares: this.fillMaze(SIZE),
+        starting_id: -1,
+        square_id_on: -1,
+        lastkey: "",
       };
-    })
+    });
   };
 
   /* Creates a maze */
@@ -325,6 +335,7 @@ class Maze extends Component {
           ));
         })}
         <button
+          id="clear-maze"
           onClick={this.ResetMaze}
           type="button"
           class="btn btn-warning"
@@ -332,6 +343,7 @@ class Maze extends Component {
           Clear Maze
         </button>
         <button
+          id="create-maze"
           onClick={() => this.pathMaker(0, SIZE * SIZE - 1)}
           type="button"
           class="btn btn-danger"
@@ -339,6 +351,7 @@ class Maze extends Component {
           Create Maze
         </button>
         <button
+          id="show-solution"
           onClick={() => this.showSolution(0, SIZE * SIZE - 1)}
           type="button"
           class="btn btn-success"

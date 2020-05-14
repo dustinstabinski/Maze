@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-body > #root > div > #maze {
+body > #root > div > #game > #maze {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -25,9 +25,30 @@ body > div > div {
   background-color:#292b2c;
 }
 
-body > #root > div > #timer {
-  float: left;
+body > #root > div > #game > #timer-parent > #timer{
+  margin: 0 auto;
   width: 25%;
-  height: 13.5%;
-  margin-top: 1%;
+}
+
+body > #root > div > #game {
+  height: 100vh;
+  background-color:#292b2c;
+}
+
+body > #root > div > #game > #maze > #clear-maze {
+  background: transparent;
+  border: none !important;
+  font-size:0;
+}
+
+body > #root > div > #game > #maze > #create-maze {
+  background: transparent;
+  border: none !important;
+  font-size:0;
+}
+
+body > #root > div > #game > #maze > #show-solution {
+  background: transparent;
+  border: none !important;
+  font-size:0;
 }
