@@ -15,9 +15,11 @@ code {
 body > #root > div > #game > #maze {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 700px;
+  height: 640px;
 }
 
 body > div > div {
@@ -31,8 +33,9 @@ body > #root > div > #game > #timer-parent > #timer{
 }
 
 body > #root > div > #game {
-  height: 100vh;
   background-color:#292b2c;
+  height: 100vh;
+  width: 100vw;
 }
 
 body > #root > div > #game > #maze > #clear-maze {
